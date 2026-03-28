@@ -2,8 +2,8 @@
 # Market Pulse Scanner - Configuration
 title: Market Pulse Scanner
 description: Daily stock market analysis with AI-assisted research and monitoring
-url: "https://gdoumou85.github.io"
-baseurl: "/Stock-Scanner-Site"
+url: "https://yourusername.github.io"
+baseurl: ""
 
 # AdSense Configuration
 google_adsense: "pub-4794018087983976"
@@ -18,17 +18,11 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 
-# Plugins (GitHub Pages compatible)
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-# Collections
-collections:
-  watchlist:
-    output: true
-    permalink: /watchlist/:name/
 
 # Exclude from processing
 exclude:
@@ -40,6 +34,14 @@ exclude:
   - .gitignore
   - DEPLOYMENT.md
   - PROJECT_PLAN.md
+  - DAILY_TIMELINE.md
+  - DOCUMENTATION_INDEX.md
+  - ADSENSE_SETUP.md
+  - RENAME_REPO.md
+  - CLOUDFLARE_SETUP.md
+  - scripts/
+  - data/
+  - _templates/
 
 # Timezone
 timezone: America/New_York
