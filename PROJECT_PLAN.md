@@ -1,7 +1,7 @@
 # Market Pulse Scanner - Project Plan
 
-**Last Updated:** March 28, 2026
-**Status:** Ready for Deployment
+**Last Updated:** March 28, 2026  
+**Status:** Ready for Launch
 
 ---
 
@@ -10,6 +10,11 @@
 ### Vision
 Create an automated stock market analysis website that publishes daily research on selected tickers. The site combines AI-assisted analysis with market data to identify opportunities worth monitoring.
 
+### Core Value Proposition
+**"Informed Commentary for Discerning Investors"**
+
+Every article makes readers feel smarter about the companies and markets they're following. Deep dives include full fundamental analysis - what the company does, its business model, financial health, and why it matters.
+
 ### Monetization
 Google AdSense integration (Publisher ID: pub-4794018087983976)
 
@@ -17,6 +22,7 @@ Google AdSense integration (Publisher ID: pub-4794018087983976)
 - **Transparency:** AI-assisted analysis, clearly disclosed
 - **Quality over quantity:** Selective ticker picking, not spray-and-pray
 - **Accessibility:** Plain language, no trader jargon
+- **Educational:** Deep dives explain companies thoroughly
 - **Multi-day tracking:** Tickers can be monitored for days, not just hours
 - **Source diversity:** Multiple news sources, rotated periodically
 
@@ -28,41 +34,71 @@ Google AdSense integration (Publisher ID: pub-4794018087983976)
 
 | Content | Time | Frequency | Description |
 |---------|------|-----------|-------------|
-| **Daily Market Brief** | 5:30 AM | Mon-Fri | Overnight recap, macro data, 5-6 tickers to watch |
-| **Deep Dive #1** | 6:00 AM | Daily | First ticker full analysis |
-| **Deep Dive #2** | 6:30 AM | Daily | Second ticker full analysis |
-| **Deep Dive #3** | 7:00 AM | Daily | Third ticker full analysis |
-| **Deep Dive #4** | 7:30 AM | Daily | Fourth ticker full analysis |
-| **Deep Dive #5** | 8:00 AM | Daily | Fifth ticker full analysis |
-| **Deep Dive #6** | 8:30 AM | As needed | Optional sixth ticker |
-| **Hourly Update** | 9:30 AM - 4:00 PM | Every 1 hour | Live price action for active tickers |
+| **Daily Market Brief** | 5:30 AM | Mon-Fri | Overnight recap, macro data, 4-6 tickers to watch |
+| **Company Deep Dive #1** | 6:00 AM | Daily | Full fundamental + technical analysis of first ticker |
+| **Company Deep Dive #2** | 6:45 AM | Daily | Full analysis of second ticker |
+| **Company Deep Dive #3** | 7:30 AM | Daily | Full analysis of third ticker |
+| **Company Deep Dive #4** | 8:15 AM | Daily | Full analysis of fourth ticker |
+| **Hourly Update** | 9:35 AM - 4:00 PM | Every 1 hour | Live price action for active tickers |
 | **Midday Wrap** | 12:30 PM | Daily | Morning performance summary |
 | **Close Wrap** | 4:30 PM | Daily | Final numbers, tomorrow setup |
 
 ### Content Types
 
-#### A. Daily Market Brief (5-7 min read)
+#### A. Daily Market Brief (5-6 min read)
 **Sections:**
 - Overnight global snapshot (US, Europe, Asia)
 - Key macro data points
-- Today's watchlist (6 tickers with 2-3 sentences each)
+- Today's watchlist (4-6 tickers with 2-3 sentences each)
 - Important events calendar
 - Key support/resistance levels
 - My take (1-2 paragraph summary)
 
 **Tone:** Professional but accessible. Explain why things matter.
 
-#### B. Ticker Deep Dive (4-5 min read)
+#### B. Company Deep Dive (8-12 min read) ← **ENHANCED**
 **Sections:**
-- Company basics (what they do)
-- Why we are watching (the setup)
-- Financial health (revenue, growth, profitability)
-- What could go right (bull case)
-- What could go wrong (bear case)
-- Trade setup (entry, stop, targets)
-- Monitoring plan (update frequency, key levels)
 
-**Note:** Each ticker gets ONE deep dive post. Hourly updates link back to this.
+**1. Company Overview (What They Do)**
+- Business model in plain English
+- Main products/services
+- How they make money
+- Competitive position
+- Recent strategic developments
+
+**2. Financial Health Check**
+- Revenue and growth trends
+- Profitability metrics
+- Balance sheet strength (cash, debt)
+- Key ratios (P/E, P/S, margins)
+- Comparison to competitors
+
+**3. Recent Developments**
+- Last earnings call highlights
+- Recent news affecting the business
+- Management guidance
+- Analyst sentiment changes
+
+**4. Technical Setup**
+- Current price action
+- Key levels (support/resistance)
+- Volume trends
+- Chart patterns
+
+**5. Investment Thesis**
+- Why we're watching NOW
+- Bull case (what could go right)
+- Bear case (what could go wrong)
+- Risk factors
+
+**6. Trade Setup**
+- Entry zone
+- Stop loss
+- Price targets
+- Position sizing guidance
+- Timeframe
+
+**Tone:** Educational and thorough. Make the reader feel like an expert on this company.
 
 #### C. Hourly Update (1-2 min read)
 **Sections:**
@@ -93,22 +129,63 @@ Google AdSense integration (Publisher ID: pub-4794018087983976)
 
 ---
 
-## 3. Technical Setup
+## 3. Data Workflow
+
+### 4:00 AM - Data Collection (Automated)
+**Scripts run:**
+1. `market_scan.py` - Futures, VIX, sectors, indices
+2. `news_scan_v2.py` - Headlines, signals, earnings
+3. `technical_screen.py` - 80+ stocks screened
+
+**Output:** JSON files in `data/` directory
+
+### 4:15-5:00 AM - Analysis (Manual)
+**I review:**
+- Market data (direction bias)
+- News signals (catalysts, earnings)
+- Technical setups (breakouts, breakdowns)
+
+**I select:** 4 tickers for deep dives
+**Criteria:**
+- Strong news catalyst + good technical setup
+- OR: Compelling fundamental story + technical entry
+- Mix of bullish and bearish setups
+- Diverse sectors when possible
+
+### 5:00-5:30 AM - Write Daily Brief
+- Summarize overnight action
+- Present 4 selected tickers
+- Explain why each was chosen
+
+### 6:00-8:15 AM - Write Deep Dives
+**For each ticker (45 min each):**
+1. Research company (10 min)
+2. Analyze financials (10 min)
+3. Review recent news (5 min)
+4. Technical analysis (10 min)
+5. Write article (10 min)
+6. Publish immediately
+
+### 9:30 AM-4:00 PM - Hourly Monitoring
+**Check every hour:**
+- Prices for active tickers
+- News flow
+- Publish updates if significant (>2% move or news)
+
+---
+
+## 4. Technical Setup
 
 ### Platform
 - **Static Site Generator:** Jekyll
-- **Hosting:** GitHub Pages (free)
-- **Domain:** GitHub Pages subdomain initially, custom domain optional
-- **Theme:** Custom dark financial theme (modern, mobile-first)
+- **Hosting:** GitHub Pages
+- **Domain:** gdoumou85.github.io/Stock-Scanner-Site/
+- **Theme:** FT-inspired (salmon/cream with magenta header)
 
 ### Repository Structure
 ```
 stock-scanner-site/
 ├── _config.yml              # Site config + AdSense ID
-├── Gemfile                  # Dependencies
-├── index.md                 # Homepage
-├── performance.md           # Live tracker page
-├── archive.md              # All posts archive
 ├── _posts/                 # All content (dated)
 │   ├── YYYY-MM-DD-daily-brief.md
 │   ├── YYYY-MM-DD-[ticker]-deep-dive.md
@@ -116,100 +193,126 @@ stock-scanner-site/
 │   ├── YYYY-MM-DD-midday-wrap.md
 │   └── YYYY-MM-DD-close-wrap.md
 ├── _layouts/               # Page templates
-│   ├── default.html
-│   ├── home.html
-│   ├── post.html
-│   └── page.html
 ├── _includes/              # Reusable components
-│   ├── head.html
-│   ├── header.html
-│   ├── footer.html
-│   ├── ad-top.html
-│   ├── ad-incontent.html
-│   └── ad-sidebar.html
-└── assets/
-    └── main.scss           # Custom dark theme
+├── assets/                 # CSS, JS
+├── scripts/                # Data collection
+│   ├── market_scan.py
+│   ├── news_scan_v2.py
+│   ├── technical_screen.py
+│   └── run_all.sh
+└── data/                   # Historical data
+    ├── market/
+    ├── news/
+    ├── technical/
+    └── archive/
 ```
 
 ### AdSense Integration
 - **Publisher ID:** pub-4794018087983976
-- **Ad Types:** Display (horizontal), In-content (article), Sidebar (vertical)
-- **Placement:** Non-intrusive, between sections, not disruptive
-
-### Design Features
-- Dark theme (easy on eyes, financial aesthetic)
-- Card-based layouts
-- Responsive (mobile-first)
-- Clean tables for data
-- Tag system for categorization
-- Sticky navigation
+- **Ad Types:** Display (horizontal), In-content, Sidebar
+- **Placement:** Non-intrusive, between sections
 
 ---
 
-## 4. Content Workflow
+## 5. Data Collection Scripts
 
-### My Daily Routine (Automated via Cron)
+### A. Market Scan (market_scan.py)
+**Runs:** 4:00 AM
+**Fetches:**
+- Futures (S&P, Nasdaq, Dow)
+- VIX
+- Sector ETFs (XLF, XLK, XLE, etc.)
+- Commodities (Oil, Gold)
+- Dollar Index
 
-**5:00 AM EST - Pre-Market Prep**
-1. Fetch futures data (S&P, Nasdaq, Dow)
-2. Scan overnight news (Bloomberg, Reuters, CNBC)
-3. Review Asian/European market closes
-4. Check economic calendar for the day
-5. Scan 50+ tickers for technical setups
+**Output:** `data/market/market_scan_YYYYMMDD_HHMM.json`
 
-**5:00-5:30 AM EST - Write Daily Brief**
-- Summarize global markets
-- Select 5-6 tickers for the day
-- Write macro analysis
-- Publish post
+### B. News Scan v2 (news_scan_v2.py)
+**Runs:** 4:05 AM
+**Fetches:**
+- Yahoo Finance headlines
+- Reddit WSB trending
+- Analyst upgrades/downgrades
+- SEC filing alerts
 
-**5:30-8:30 AM EST - Deep Dives (One by One)**
-For each selected ticker:
-1. Research company fundamentals
-2. Check recent news
-3. Analyze technical levels
-4. Write deep dive post
-5. Publish immediately (don't batch)
-6. Move to next ticker
+**Signal Extraction:**
+- Bullish/bearish keyword detection
+- Sentiment scoring
+- Earnings detection
+- Insider trading alerts
 
-**9:30 AM EST - Market Open**
-- Begin hourly monitoring
-- Check price action on all active tickers
-- Scan for news flow
+**Output:** `data/news/news_signals_YYYYMMDD_HHMM.json`
 
-**9:35 AM, 10:35 AM, 11:35 AM... - Hourly Updates**
-- Write update if significant move (>1%) or news
-- Skip if quiet ("no update" is okay)
-- Focus on actionable insights
+### C. Technical Screen (technical_screen.py)
+**Runs:** 4:10 AM
+**Screens:** 80+ stocks
+**Criteria:**
+- Breakout candidates (>2%, volume spike, above MA)
+- Breakdown candidates (<-2%, volume spike, below MA)
+- Oversold bounces (near 52w low, positive momentum)
+- Volume spikes (>2x average)
+- Near 52w high/low
 
-**12:30 PM EST - Midday Wrap**
-- Summarize morning performance
-- Identify winners/losers
-- Set afternoon expectations
+**Output:** `data/technical/technical_screen_YYYYMMDD_HHMM.json`
 
-**4:30 PM EST - Close Wrap**
-- Final numbers for all tickers
-- Day summary
-- Tomorrow preview
-
-**Post-Close:**
-- Update performance tracker
-- Prep for next day
-
-### Multi-Day Monitoring
-Some tickers will be tracked for multiple days:
-- SOFI (current position) - ongoing
-- Earnings plays - 2-3 days
-- Technical setups - until target hit or stop triggered
-
-**How it works:**
-- First day: Full deep dive + hourly updates
-- Subsequent days: Brief morning check-in + hourly updates
-- New deep dive only if thesis changes significantly
+### D. Master Script (run_all.sh)
+**Runs all three in sequence**
 
 ---
 
-## 5. Ticker Selection Criteria
+## 6. My Article Generation Process
+
+### Step 1: Data Analysis (4:15-4:45 AM)
+**Review:**
+- `data/market/latest.json` - Market direction
+- `data/news/latest.json` - Signals and catalysts
+- `data/technical/latest.json` - Screened stocks
+
+**Decision Matrix:**
+```
+IF stock in technical_screen.breakout AND
+   news_signals.strong_buy.contains(stock):
+    → SELECT for bullish deep dive
+
+IF stock in technical_screen.breakdown AND
+   news_signals.avoid.contains(stock):
+    → SELECT for bearish/short deep dive
+
+IF stock in technical_screen.oversold AND
+   news_signals.buy.contains(stock):
+    → SELECT for bounce play
+```
+
+### Step 2: Select 4 Tickers (4:45 AM)
+**Priorities:**
+1. Highest conviction setup (strong news + strong technical)
+2. Earnings play (if applicable)
+3. Contrarian opportunity (oversold quality name)
+4. Momentum continuation or reversal
+
+**Mix:** At least one bearish/short candidate
+
+### Step 3: Research Each Ticker (6:00-8:15 AM)
+**For each selected ticker:**
+1. **Company research** - What do they do? Business model?
+2. **Financial analysis** - Revenue growth, margins, balance sheet
+3. **Competitive position** - Market share, moat
+4. **Recent developments** - Last earnings, guidance, news
+5. **Technical analysis** - Price action, levels
+6. **Write** - Educational deep dive article
+
+### Step 4: Publish (Throughout morning)
+- Publish each deep dive as completed
+- Don't batch - continuous flow
+
+### Step 5: Market Hours Monitoring (9:30 AM-4:00 PM)
+- Hourly price checks
+- News scanning
+- Updates if significant
+
+---
+
+## 7. Ticker Selection Criteria
 
 ### No Hard Rules
 Use judgment based on:
@@ -228,24 +331,21 @@ Use judgment based on:
 
 ### Selection Process
 1. Scan futures/macro for sector themes
-2. Identify 10-15 candidate tickers
-3. Rank by setup quality
-4. Select top 5-6
-5. Ensure diversity (don't pick 6 tech stocks)
+2. Identify 10-15 candidate tickers from technical screen
+3. Rank by setup quality + news signals
+4. Select top 4
+5. Ensure diversity (don't pick 4 tech stocks)
+6. Ensure at least one short/bearish candidate
 
 ---
 
-## 6. News Sources
+## 8. News Sources
 
 ### Primary Sources
-- Bloomberg
-- Reuters
-- CNBC
-- Wall Street Journal
-- Financial Times
-- Benzinga
-- MarketWatch
-- Seeking Alpha
+- Yahoo Finance (free API)
+- Reddit (r/wallstreetbets)
+- Benzinga (free tier)
+- SEC EDGAR (RSS feeds)
 
 ### Rotation
 - Check new sources every few days
@@ -257,7 +357,26 @@ Every headline gets linked to source. Build trust through transparency.
 
 ---
 
-## 7. Performance Tracking
+## 9. Data Storage & Archival
+
+### Daily Data
+- Saved to `data/market/`, `data/news/`, `data/technical/`
+- Keep 30 days locally
+- Archive older data to `data/archive/`
+
+### Historical Analysis
+- Monthly review of performance
+- Track win rates by setup type
+- Refine selection criteria
+
+### Article Archive
+- All posts kept in `_posts/`
+- Historical reference for patterns
+- SEO value over time
+
+---
+
+## 10. Performance Tracking
 
 ### Metrics Tracked
 - Entry price for each ticker
@@ -280,7 +399,7 @@ Every headline gets linked to source. Build trust through transparency.
 
 ---
 
-## 8. Risk Management
+## 11. Risk Management
 
 ### Disclaimers (On Every Page)
 - "This is market analysis, not financial advice"
@@ -302,38 +421,47 @@ Every headline gets linked to source. Build trust through transparency.
 
 ---
 
-## 9. Current Status
+## 12. Cron Jobs
+
+### Data Collection
+**Time:** 4:00 AM EST, Mon-Fri  
+**Command:** `cd ~/.openclaw/workspace/projects/stock-scanner-site && ./scripts/run_all.sh`
+
+### Other Reminders
+- None currently (SOFI jobs removed)
+- Manual monitoring during market hours
+
+---
+
+## 13. Current Status
 
 ### ✅ Completed
 - [x] Jekyll site structure
-- [x] Custom dark theme
+- [x] FT-inspired theme (salmon/magenta)
 - [x] All content templates
 - [x] AdSense integration
 - [x] Sample posts for all types
 - [x] Performance tracker page
 - [x] Navigation and layout
+- [x] Data collection scripts
+- [x] Cron job for 4:00 AM runs
 
 ### 🔄 Next Steps
-- [ ] Create GitHub repository
-- [ ] Push files to repo
-- [ ] Enable GitHub Pages
-- [ ] Configure custom domain (optional)
-- [ ] Set up cron jobs for automated publishing
-- [ ] Test first daily brief manually
-- [ ] Launch
+- [ ] Test data scripts (run manually)
+- [ ] Verify first daily brief generates correctly
+- [ ] Launch first trading day
+- [ ] Monitor and refine
 
 ---
 
-## 10. Future Enhancements (Post-Launch)
+## 14. Future Enhancements (Post-Launch)
 
 ### Phase 2 Ideas
 - Email newsletter (daily brief delivered)
 - Twitter/X bot (auto-post alerts)
 - Discord community
-- Mobile app
+- More data sources (premium APIs)
 - Real-time price widgets
-- Backtesting system
-- More sectors (crypto, forex, international)
 
 ### Phase 3 Ideas
 - Premium tier (no ads, early access)
@@ -344,27 +472,26 @@ Every headline gets linked to source. Build trust through transparency.
 
 ---
 
-## 11. Questions & Decisions Log
+## 15. Questions & Decisions Log
 
 ### Decisions Made
 | Date | Decision | Rationale |
 |------|----------|-----------|
 | Mar 28 | Use Jekyll + GitHub Pages | Free, reliable, easy to update via git |
-| Mar 28 | 5:30 AM EST publish time | 2 hours before market open, allows digestion |
-| Mar 28 | Hourly updates (not 30-min) | Quality over quantity, less noise |
-| Mar 28 | Multi-day monitoring | Real positions take time to develop |
-| Mar 28 | Plain language tone | Accessible to non-traders |
-| Mar 28 | 5-6 tickers per day | Manageable workload, focused coverage |
+| Mar 28 | 5:30 AM EST publish time | 2 hours before market open |
+| Mar 28 | FT-inspired color scheme | Distinctive, memorable, professional |
+| Mar 28 | Deep dives include fundamentals | Makes readers feel smarter, better engagement |
+| Mar 28 | 4 tickers per day (not 6) | Quality over quantity, 45 min per deep dive |
+| Mar 28 | 4:00 AM data collection | Gives 1.5 hour analysis window before publish |
 
 ### Open Questions
-- Should we add a weekend weekly review post?
-- Do we want email subscriptions?
-- Should we track paper trades vs just analysis?
-- What happens to old posts? (Archive vs delete?)
+- Weekend content? (Weekly review?)
+- Historical data retention policy?
+- When to archive old posts?
 
 ---
 
-## 12. Contact & Maintenance
+## 16. Contact & Maintenance
 
 **Site Owner:** George  
 **AI Assistant:** Main Assistant  
