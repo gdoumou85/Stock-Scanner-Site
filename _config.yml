@@ -1,0 +1,50 @@
+---
+# Market Pulse Scanner - Configuration
+title: Market Pulse Scanner
+description: Daily stock market analysis with AI-assisted research and monitoring
+url: "https://yourusername.github.io"
+baseurl: "/stock-scanner-site"
+
+# AdSense Configuration
+google_adsense: "pub-4794018087983976"
+
+# Author
+author:
+  name: Market Pulse
+  email: contact@marketpulse.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  watchlist:
+    output: true
+    permalink: /watchlist/:name/
+  monitors:
+    output: true
+    permalink: /monitor/:name/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .gitignore
+
+# Timezone
+timezone: America/New_York

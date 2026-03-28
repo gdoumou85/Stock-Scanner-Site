@@ -1,0 +1,40 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p class="disclaimer">{{ site.description | escape }}</p>
+        <p class="disclaimer small">
+          <strong>Disclaimer:</strong> This site provides AI-assisted market analysis for informational purposes only. 
+          Not financial advice. Always do your own research before making investment decisions.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
+      <p class="small">Analysis powered by automated market scanning + AI-assisted commentary.</p>
+    </div>
+
+  </div>
+
+</footer>
