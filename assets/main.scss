@@ -109,6 +109,58 @@ body {
   border-bottom: 1px solid var(--ft-border);
 }
 
+/* Ticker Strip - Live prices in header */
+.ticker-strip {
+  background-color: var(--ft-pink-dark);
+  border-bottom: 1px solid var(--ft-border);
+  padding: 10px 0;
+  overflow-x: auto;
+}
+
+.ticker-strip-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.ticker-strip-label {
+  font-weight: 700;
+  color: var(--ft-magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+
+.ticker-strip-item {
+  color: var(--text-primary);
+}
+
+.ticker-strip-item strong {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.ticker-up {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.ticker-down {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.ticker-strip-divider {
+  color: var(--ft-border);
+  opacity: 0.6;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
