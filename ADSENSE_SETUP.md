@@ -9,9 +9,11 @@
 
 1. Go to https://www.google.com/adsense
 2. Sign in with your Google account
-3. Click "Add site" 
-4. Enter: `https://gdoumou85.github.io/Stock-Scanner-Site/`
-5. Follow verification steps (add meta tag or HTML file)
+3. Click "Add site"
+4. Enter the URL as: `https://gdoumou85.github.io`
+   - **Important:** Use just the domain, not the full path
+   - Do NOT include `/Stock-Scanner-Site/` in the URL
+5. Follow verification steps (add meta tag or HTML file to your site)
 
 ---
 
