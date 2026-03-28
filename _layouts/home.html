@@ -2,8 +2,31 @@
 layout: default
 ---
 
-<div class="home">
+<div class="hero">
+  <h1>Market Pulse Scanner</h1>
+  <p>{{ site.description }}</p>
+</div>
+
+<div class="page-content">
   
-  {{ content }}
+  <div class="section-header">
+    <h2>Latest Analysis</h2>
+  </div>
+
+  <ul class="article-list">
+    {% for post in site.posts limit:10 %}
+    <li class="article-item">
+      <div class="article-meta">
+        <span class="article-category">{{ post.tags | first | capitalize }}</span>
+        <span>{{ post.date | date: "%B %d, %Y" }}</span>
+      </div>
+      <h2 class="article-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="article-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+      <div class="article-footer">
+        <a href="{{ post.url | relative_url }}" class="read-more">Read full analysis →</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 
 </div>

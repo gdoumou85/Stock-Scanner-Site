@@ -1,40 +1,32 @@
 <footer class="site-footer h-card">
-  <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-          </li>
-          {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {%- endif -%}
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>{{ site.title }}</h4>
+        <p>{{ site.description }}</p>
+        <p style="margin-top: 16px; font-size: 0.85rem;">Analysis powered by automated scanning and AI-assisted research. Not financial advice.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Sections</h4>
+        <ul class="footer-links">
+          <li><a href="{{ "/" | relative_url }}">Latest Analysis</a></li>
+          <li><a href="{{ "/performance/" | relative_url }}">Performance Tracker</a></li>
+          <li><a href="{{ "/archive/" | relative_url }}">Article Archive</a></li>
         </ul>
       </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p class="disclaimer">{{ site.description | escape }}</p>
-        <p class="disclaimer small">
-          <strong>Disclaimer:</strong> This site provides AI-assisted market analysis for informational purposes only. 
-          Not financial advice. Always do your own research before making investment decisions.
-        </p>
+      
+      <div class="footer-section">
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="{{ "/about/" | relative_url }}">Our Method</a></li>
+          <li><a href="{{ "/about/" | relative_url }}">Disclaimer</a></li>
+        </ul>
       </div>
     </div>
-
+    
     <div class="footer-bottom">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</p>
-      <p class="small">Analysis powered by automated market scanning + AI-assisted commentary.</p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved. This site provides market analysis for informational purposes only. Not financial advice.</p>
     </div>
-
   </div>
-
 </footer>

@@ -3,15 +3,13 @@
 
 {%- include head.html -%}
 
-<body class="{% if page.layout == 'home' %}home{% endif %}">
+<body>
 
   {%- include header.html -%}
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-  </main>
+  <div class="page-content" aria-label="Content">
+    {{ content }}
+  </div>
 
   {%- include footer.html -%}
 
