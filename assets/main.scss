@@ -44,7 +44,7 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary); /* Pink background for the entire page */
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 18px;
@@ -238,6 +238,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 40px;
+  background-color: var(--bg-secondary); /* Pink background for the whole container */
 }
 
 @media (max-width: 900px) {
@@ -302,8 +303,9 @@ body {
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 30px;
-  padding-bottom: 12px;
+  padding: 20px 24px;
   border-bottom: 2px solid var(--ft-magenta);
+  background-color: var(--bg-tertiary);
 }
 
 .section-header h2 {
@@ -323,11 +325,16 @@ body {
 
 .article-list {
   list-style: none;
+  background-color: var(--bg-tertiary);
+  padding: 0 24px;
 }
 
 .article-item {
-  padding: 28px 0;
+  padding: 28px 24px;
   border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+  margin-left: -24px;
+  margin-right: -24px;
 }
 
 .article-item:last-child {
@@ -498,12 +505,19 @@ body {
   border-top: 1px solid var(--border-color);
 }
 
-/* Post content */
+/* Article wrapper - Consistent background for all posts */
+.post-content-wrapper {
+  background-color: var(--bg-primary);
+  min-height: calc(100vh - 400px);
+}
+
+/* Post header - Now with consistent background */
 .post-header {
   max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 40px 0;
+  margin: 0 auto;
+  padding: 40px 24px;
   border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
 }
 
 .post-label {
@@ -536,6 +550,8 @@ body {
   margin: 0 auto;
   font-size: 1.15rem;
   line-height: 1.8;
+  padding: 40px 24px;
+  background-color: var(--bg-primary);
 }
 
 .post-content h2 {

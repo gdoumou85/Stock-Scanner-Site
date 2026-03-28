@@ -32,7 +32,7 @@ read_time: 4 min
 **Notable Earnings This Week:**
 
 | Date | Company | Ticker | Expected EPS | Consensus |
-|------|---------|--------|----------------|-----------|
+|------|---------|--------|--------------|-----------|
 | Mon | [Company] | [TICK] | $X | Beat/Miss expected? |
 | Tue | [Company] | [TICK] | $X | Consensus |
 | Wed | [Company] | [TICK] | $X | Consensus |
@@ -45,15 +45,13 @@ read_time: 4 min
 
 ## Key Levels to Watch
 
-**S&P 500:**
-- Support: [Level]
-- Resistance: [Level]
-- Last week: [Brief recap]
+**Index Levels:**
 
-**Nasdaq:**
-- Support: [Level]
-- Resistance: [Level]
-- Last week: [Brief recap]
+| Index | Support | Resistance | Last Week |
+|-------|---------|------------|-----------|
+| S&P 500 | [Level] | [Level] | [Brief recap] |
+| Nasdaq | [Level] | [Level] | [Brief recap] |
+| Russell 2000 | [Level] | [Level] | [Brief recap] |
 
 **Key Sectors:**
 - **Strong:** [Sector names]
@@ -72,9 +70,9 @@ read_time: 4 min
 ## Potential Opportunities
 
 Based on earnings calendar and technical setups, watch:
-- [Ticker 1] — [Why]
-- [Ticker 2] — [Why]
-- [Ticker 3] — [Why]
+- **[Ticker 1]** — [Why]
+- **[Ticker 2]** — [Why]
+- **[Ticker 3]** — [Why]
 
 ---
 

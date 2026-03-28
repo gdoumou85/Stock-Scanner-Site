@@ -3,13 +3,21 @@ layout: post
 title: "Market Snapshot: Week of March 23-27, 2026"
 date: 2026-03-28 14:30:00 +0000
 tags: [market-snapshot, weekly-review]
+read_time: 2 min
+---
+
+# Market Snapshot: Week of March 23-27, 2026
+*Weekly Review | Saturday, March 28, 2026*
+
 ---
 
 ## Weekly Market Summary
 
 The broader markets wrapped up a volatile week with mixed signals. Tech stocks faced pressure from renewed inflation concerns while financials showed relative strength.
 
-### Key Levels This Week
+---
+
+## Key Levels This Week
 
 | Index | Weekly Change | Key Level | Status |
 |-------|--------------|-----------|--------|
@@ -17,7 +25,9 @@ The broader markets wrapped up a volatile week with mixed signals. Tech stocks f
 | Nasdaq | -2.1% | 18,200 | Testing 50-day MA |
 | Russell 2000 | +0.4% | 2,100 | Holding breakout |
 
-### Sector Rotation Signals
+---
+
+## Sector Rotation Signals
 
 **Strength:**
 - Financial Services (+1.8%)
@@ -29,7 +39,9 @@ The broader markets wrapped up a volatile week with mixed signals. Tech stocks f
 - Consumer Discretionary (-2.5%)
 - Communication Services (-1.9%)
 
-### Notable Movers
+---
+
+## Notable Movers
 
 **SOFI Technologies (SOFI)** closed at $15.23, down 4% for the week. The fintech sector continues to face pressure from rate uncertainty and the lingering Muddy Waters short report. The stock is now 53% below its 52-week high of $32.73.
 
@@ -38,3 +50,5 @@ The broader markets wrapped up a volatile week with mixed signals. Tech stocks f
 ---
 
 *Analysis generated through automated scanning + AI-assisted commentary.*
+
+**Disclaimer:** Market data for informational purposes only.

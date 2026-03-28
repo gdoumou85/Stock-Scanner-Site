@@ -7,6 +7,9 @@ read_time: 1 min
 ---
 
 # [Holiday Name] — Markets Closed
+*Markets Closed | [Date]*
+
+---
 
 **U.S. stock markets are closed today in observance of [Holiday Name].**
 
@@ -14,10 +17,12 @@ read_time: 1 min
 
 ## Holiday Schedule
 
-- **NYSE:** Closed
-- **Nasdaq:** Closed
-- **Bond Markets:** Closed
-- **Resume Trading:** [Day], [Date] at 9:30 AM EST
+| Market | Status |
+|--------|--------|
+| **NYSE** | Closed |
+| **Nasdaq** | Closed |
+| **Bond Markets** | Closed |
+| **Resume Trading** | [Day], [Date] at 9:30 AM EST |
 
 ---
 
