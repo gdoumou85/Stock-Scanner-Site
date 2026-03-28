@@ -2,14 +2,16 @@
 layout: default
 ---
 
-<article class="page-content">
+<article class="post-content-wrapper">
   
   <header class="post-header">
+    <div class="post-label">{{ page.tags | first | capitalize }}</div>
     <h1 class="post-title">{{ page.title }}</h1>
+    
     <div class="post-meta-main">
       <span>{{ page.date | date: "%B %d, %Y" }}</span>
-      {% if page.tags %}
-      <span>{{ page.tags | join: " • " }}</span>
+      {% if page.read_time %}
+      <span>{{ page.read_time }} read</span>
       {% endif %}
     </div>
   </header>

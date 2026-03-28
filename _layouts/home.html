@@ -3,30 +3,79 @@ layout: default
 ---
 
 <div class="hero">
-  <h1>Market Pulse Scanner</h1>
-  <p>{{ site.description }}</p>
+  <div class="hero-content">
+    <h1>Market Pulse Scanner</h1>
+    <p class="hero-subtitle">Daily stock market analysis with AI-assisted research. Informed commentary for discerning investors.</p>
+    <p class="hero-meta">Updated daily at 5:30 AM EST</p>
+  </div>
 </div>
 
-<div class="page-content">
+<div class="main-container">
   
-  <div class="section-header">
-    <h2>Latest Analysis</h2>
+  <div class="main-content">
+    
+    {% if site.posts.first %}
+    <!-- Featured Article -->
+    <article class="featured-article">
+      <div class="featured-label">Latest Analysis</div>
+      <h2 class="featured-title">
+        <a href="{{ site.posts.first.url | relative_url }}">{{ site.posts.first.title }}</a>
+      </h2>
+      <p class="featured-excerpt">{{ site.posts.first.excerpt | strip_html | truncatewords: 50 }}</p>
+      <div class="featured-meta">
+        {{ site.posts.first.date | date: "%B %d, %Y" }} | {{ site.posts.first.tags | first | capitalize }}
+      </div>
+    </article>
+    {% endif %}
+
+    <!-- Article List -->
+    <div class="section-header">
+      <h2>Recent Analysis</h2>
+      <a href="{{ "/archive/" | relative_url }}">View All →</a>
+    </div>
+
+    <ul class="article-list">
+      {% for post in site.posts offset:1 limit:8 %}
+      <li class="article-item">
+        <div class="article-meta">
+          <span class="article-category">{{ post.tags | first | capitalize }}</span>
+          <span class="article-date">{{ post.date | date: "%B %d" }}</span>
+        </div>
+        <h3 class="article-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="article-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read analysis →</a>
+      </li>
+      {% endfor %}
+    </ul>
+
   </div>
 
-  <ul class="article-list">
-    {% for post in site.posts limit:10 %}
-    <li class="article-item">
-      <div class="article-meta">
-        <span class="article-category">{{ post.tags | first | capitalize }}</span>
-        <span>{{ post.date | date: "%B %d, %Y" }}</span>
-      </div>
-      <h2 class="article-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p class="article-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
-      <div class="article-footer">
-        <a href="{{ post.url | relative_url }}" class="read-more">Read full analysis →</a>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    
+    <div class="sidebar-section">
+      <h4 class="sidebar-title">Active Monitors</h4>
+      <ul class="sidebar-list">
+        <li><a href="{{ "/performance/" | relative_url }}">Performance Tracker</a></li>
+        <li><a href="#">SOFI Technologies</a></li>
+        <li><a href="#">NVIDIA Corp</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4 class="sidebar-title">Market Schedule</h4>
+      <ul class="sidebar-list">
+        <li>Daily Brief: 5:30 AM EST</li>
+        <li>Market Open: 9:30 AM EST</li>
+        <li>Midday Wrap: 12:30 PM EST</li>
+        <li>Close Wrap: 4:30 PM EST</li>
+      </ul>
+    </div>
+
+    <div class="ad-container">
+      Advertisement
+    </div>
+
+  </aside>
 
 </div>
